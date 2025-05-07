@@ -1,30 +1,303 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhananjay's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhananjay Singh | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1e3c72;
+      padding: 30px 0;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(to right, #2a5298, #1e3c72);
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: #16222a;
+      padding: 16px;
+    }
+
+    nav a {
+      color: #f1f1f1;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ffe7;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') no-repeat center center/cover;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 40px auto 20px auto;
+      display: block;
+      border: 6px solid #00ffe7;
+      box-shadow: 0 0 20px rgba(0, 255, 231, 0.6);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00ffe7;
+      font-size: 2.5rem;
+    }
+
+    .card {
+      background: #222;
+      color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 255, 231, 0.3);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #2c2c2c;
+    }
+
+    .features, .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 14px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .contact button {
+      padding: 14px;
+      background: #00ffe7;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .contact button:hover {
+      background: #00bfa5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0d1b2a;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .resume-button {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .resume-button a {
+      background: #00ffe7;
+      color: #000;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .resume-button a:hover {
+      background: #00bfa5;
+    }
+
+    .go-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00ffe7;
+      color: #000;
+      padding: 12px 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.8rem;
+      z-index: 1000;
+    }
+
+    .go-to-top:hover {
+      background: #00bfa5;
+    }
+
+    .social-links a {
+      margin: 0 14px;
+      font-size: 2.2rem;
+    }
+
+    .social-links {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Dhananjay's Portfolio</h1>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <p>I am a student of Electronics Engineering passionate about coding and learning new technologies.</p>
-    </section>
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>C</li>
-            <li>Java</li>
-        </ul>
-    </section>
-    <footer>
-        <p>Contact: dhananjaysingh09651@gmail.com</p>
-    </footer>
+
+  <header class="fade-in">
+    <h1>Dhananjay Singh</h1>
+    <p>Electronics Engineer | Python & Java Coder | Tech Enthusiast</p>
+  </header>
+
+  <img src="https://avatars.githubusercontent.com/u/122714222?v=4" alt="Dhananjay Singh" class="profile-img fade-in" />
+
+  <nav class="fade-in">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero fade-in" id="home">
+    <h2>Beautiful. Responsive. Fast.</h2>
+    <p>Welcome to my world of coding, electronics, and creativity.</p>
+  </section>
+
+  <section id="features" class="fade-in">
+    <h2>Features</h2>
+    <div class="features">
+      <div class="card fade-in">
+        <h3>Modern Design</h3>
+        <p>Responsive layout that looks stunning on any device.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>Fast Loading</h3>
+        <p>Optimized code ensures lightning-fast website performance.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>Flexible Skills</h3>
+        <p>Python, Java, C, and embedded electronics expertise.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="fade-in">
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="card fade-in">
+        <h3>Free</h3>
+        <p>Ideal for resume portfolios or personal showcase.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>Pro</h3>
+        <p>Perfect for students & freelancers looking to grow.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>Custom</h3>
+        <p>Specially tailored for your project needs & goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2>Contact Me</h2>
+
+    <div class="social-links fade-in">
+      <a href="https://instagram.com/LL.dhananjay.LL" target="_blank" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/dhananjay-singh-81544a311" target="_blank" style="color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <p style="text-align:center; font-size:1.2rem; margin-bottom:20px;">
+      Reach me at: <strong>dhananjaysingh09651@gmail.com</strong>
+    </p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="resume-button">
+      <a href="Dhananjay_Singh_Resume.pdf" download>Download Resume</a>
+    </div>
+  </section>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Dhananjay Singh | All Rights Reserved</p>
+  </footer>
+
+  <div class="go-to-top fade-in" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</div>
+
 </body>
 </html>
